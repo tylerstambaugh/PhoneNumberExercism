@@ -39,8 +39,15 @@ public class PhoneNumber
             Console.WriteLine($"{cleanNumber} cannot start with 0");
 
         }
-        //check if first digit is 1
-        if (cleanNumber.StartsWith("1"))
+
+        if (cleanNumber.Substring(3, 1) == "0")
+        {
+            //throw new ArgumentException(cleanNumber + " must be 9 digits");
+            Console.WriteLine($"{cleanNumber} cannot start with 0");
+        }
+
+            //check if first digit is 1
+            if (cleanNumber.StartsWith("1"))
         {
             //remove first digit if it is 1
             cleanNumber = cleanNumber.Remove(0, 1);
