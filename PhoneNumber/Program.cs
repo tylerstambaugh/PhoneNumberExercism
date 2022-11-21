@@ -40,7 +40,7 @@ public class PhoneNumber
 
         }
 
-        if (cleanNumber.Substring(3, 1) == "0")
+        if (cleanNumber.Substring(3, 1) == "0" || cleanNumber.Substring(3, 1) == "1")
         {
             //throw new ArgumentException(cleanNumber + " must be 9 digits");
             Console.WriteLine($"{cleanNumber} cannot start with 0");
