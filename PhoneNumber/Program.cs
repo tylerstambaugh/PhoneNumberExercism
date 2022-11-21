@@ -40,18 +40,26 @@ public class PhoneNumber
 
         }
 
-        if (cleanNumber.Substring(3, 1) == "0" || cleanNumber.Substring(3, 1) == "1")
-        {
-            //throw new ArgumentException(cleanNumber + " must be 9 digits");
-            Console.WriteLine($"{cleanNumber} cannot start with 0");
-        }
-
-            //check if first digit is 1
-            if (cleanNumber.StartsWith("1"))
+        //check if first digit is 1
+        if (cleanNumber.StartsWith("1"))
         {
             //remove first digit if it is 1
             cleanNumber = cleanNumber.Remove(0, 1);
-            
+
+        }
+
+        // check if exchange starts with 1 or 0
+        if (cleanNumber.Substring(3, 1) == "0" || cleanNumber.Substring(3, 1) == "1") 
+        {
+            //throw new ArgumentException(cleanNumber + " must be 9 digits");
+            Console.WriteLine($"{cleanNumber} exchange cannot start with 0 or 1");
+        }
+
+        // check if exchange starts with 1 or 0
+        if (cleanNumber.Substring(0, 1) == "0" || cleanNumber.Substring(0, 1) == "1")
+        {
+            //throw new ArgumentException(cleanNumber + " must be 9 digits");
+            Console.WriteLine($"{cleanNumber} area code cannot start with 0 or 1");
         }
 
         if (cleanNumber.Length != 10)
